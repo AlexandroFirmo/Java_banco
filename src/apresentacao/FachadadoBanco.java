@@ -87,7 +87,7 @@ public class FachadadoBanco {
 				contaPoupanca = new ContaPoupanca(titular,valor);
 				repConta.inserirConta(contaPoupanca);
 				String saldo = String.format("%.2f", repConta.consultaSaldo(contaPoupanca.getNumConta()));
-				JOptionPane.showMessageDialog(null,"Conta Criada com sucesso Sr(sra): "+contaPoupanca.getTitular().getNome()+"\nsaldo: "+saldo+"\nConta Poupança Numero: "+contaPoupanca.getNumConta());
+				JOptionPane.showMessageDialog(null,"Conta Criada com sucesso Sr(sra): "+contaPoupanca.getTitular().getNome()+"\nsaldo: "+saldo+"\nConta PoupanÃ§a Numero: "+contaPoupanca.getNumConta());
 
 			}else{
 				throw new ValorInvalidoException();
@@ -204,6 +204,9 @@ public class FachadadoBanco {
 	
 	public void removerConta(int numConta)throws ContaInvalidaException {
 		if(repConta.existir(numConta)){
+			
+			conta = repConta.consultaConta(numConta);
+			JOptionPane.showMessageDialog(null,"Cliente: "+conta.getTitular().getNome()+"\n Numero: "+conta.getNumConta()+"\n Saldo: "+conta.getSaldo());
 			repConta.remover(numConta);
 			JOptionPane.showMessageDialog(null,"Conta Removida Com Sucesso!!");
 			
