@@ -16,7 +16,7 @@ import execoes.ValorInvalidoException;
 public class Banco {
 	
 	public static void main(String[] args){
-		// MVC PRADÃo 
+		// MVC PRADÃƒo 
 		FachadadoBanco fachada = new FachadadoBanco();
 		
 		int opcao = 0;
@@ -28,14 +28,14 @@ public class Banco {
 						+ "2 -Lista Cliente.\n"
 						+ "3 - Atualizar Dados de Cliente.\n"
 						+ "4 - Abrir Conta Corrente.\n"
-						+ "5 - Abrir Conta Poupança.\n"
+						+ "5 - Abrir Conta PoupanÃ§a.\n"
 						+ "6 - Abrir Conta Bonificada. \n"
 						+ "7 - Consultar Saldo.\n"
 						+ "8 - Realizar Saque.\n"
 						+ "9 - Realizar Deposito.\n"
 						+ "10 - Realizar Transferencia.\n"
 						+ "11 - Render Juros. \n"
-						+ "12 - Render Bônus. \n"
+						+ "12 - Render BÃ´nus. \n"
 						+ "13 - Encerrar Conta. \n"
 						+ "14 - Finalizar Sistema. "));
 				
@@ -91,7 +91,7 @@ public class Banco {
 					try {
 						Cliente titular6  = fachada.consultaCliente(cpf4);
 						
-						fachada.inserirContaBonificada(titular6, valor);
+						fachada.inserirConta(titular6, valor);
 					}catch(ClienteInvalidoException e){
 						JOptionPane.showMessageDialog(null, e.getMessage());
 						
@@ -100,14 +100,14 @@ public class Banco {
 					}
 					break;
 				case 5:
-					JOptionPane.showMessageDialog(null, "Para Abri uma Conta Poupança Digite CPF do cliente e o valor de abertura da conta");
+					JOptionPane.showMessageDialog(null, "Para Abri uma Conta PoupanÃ§a Digite CPF do cliente e o valor de abertura da conta");
 					String cpf5= JOptionPane.showInputDialog("Digite o cpf do Cliente.");
 					double valor5 =Double.parseDouble(JOptionPane.showInputDialog("Digite o valor de abertura da conta."));
 					
 					try {
 						Cliente titular6  = fachada.consultaCliente(cpf5);
 						
-						fachada.inserirContaBonificada(titular6, valor5);
+						fachada.inserirContaPoupanca(titular6, valor5);
 						
 					}catch(ClienteInvalidoException e){
 						JOptionPane.showMessageDialog(null, e.getMessage());
